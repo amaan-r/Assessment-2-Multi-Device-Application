@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn Page</title>
+    <link rel="stylesheet" href="/login.css">
+    <link rel="icon" type="image/png" href="/Images/bleh cat.png">
+</head>
+
+<body>
+    <div class=web_name>
+        <h1>BLEH</h1>
+    </div>
+    <div class="container">
+        <h1 class="header">Log-in</h1>
+        <form action="/login" method='post'>
+            <div class="form_user">
+                <label for="username_id">User Name:</label>
+                <input type="text" id="username_id" name='username' placeholder="*username" required autocomplete="off">
+            </div>
+            <div class="form_pwd">
+                <label for="pwd_id">Password:</label>
+                <input type="password" id="pwd_id" name='password' placeholder="*password" required autocomplete="off">
+            </div>
+            <button type="submit" class="login_button">Log in</button>
+        </form>
+        <p><a class="signup_link" href="/signup">Sign up?</a></p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share</title>
+    <link rel="stylesheet" href="/share.css">
+    <link rel="icon" type="image/png" href="/Images/bleh cat.png">
+</head>
+
+<body>
+    <a class="logo" href="/Images/bleh-cat.jpg"><img src="/Images/Logo.png"></a>
+    <h1 class="header">Share your assets >_< </h1>
+            <form action="/share" method="POST">
+                <div class="project_title">
+                    <input type="text" placeholder="Project Title" name="title" required>
+                </div>
+                <div class="description">
+                    <textarea name="description" placeholder="Write about your Asset"></textarea>
+                </div>
+                <div class="asset_link">
+                    <input type="url" name="link" placeholder="=URL for GitHub, Youtube, Drive, etc." required>
+                </div>
+                <input type="hidden" name="creatorName" value="<%= userName%>">
+                <div class="selection_button">
+                    <select name="category" required>
+                        <option value="" disabled selected>Categories</option>
+                        <option value="Code">Code</option>
+                        <option value="Visual">Visual</option>
+                        <option value="Audio">Audio</option>
+                    </select>
+                </div>
+                <div class="submit_button">
+                    <button type="submit">Post</button>
+                </div>
+                <div class="redirection_button">
+                    <button><a href="/home">Go back</a></button>
+                </div>
+            </form>
+
+            <script>
+                const logo = document.querySelector('.logo');
+                const meow = new Audio('/audio/bleehhh!.mp3'); // cat goes blehhh!
+
+                logo.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const url = this.href;
+
+                    meow.currentTime = 0;
+                    meow.play();
+                    meow.addEventListener('ended', function () {
+                        window.location.href = url;
+                    }, { once: true });
+                });
+                const select = document.querySelector('select[name="category"]');
+                select.addEventListener('change',function(){
+                    select.className = 'category_' + this.value;
+                    const placeholder = select.querySelector('option[value=""]');
+                    if (placeholder){
+                        placeholder.remove();
+                    }
+                });
+            </script>
+</body>
+
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/home.css">
+    <link rel="icon" type="image/png" href="/Images/bleh cat logo.png">
+    <title>Home</title>
+</head>
+
+<body>
+    <a class="logo" href="/Images/bleh-cat.jpg"><img src="/Images/Logo.png"></a>
+    <header class="filter_buttons">
+
+        <a href="/home" class="general_button">General</a>
+        <a href="/home?category=Code&user=<%= userName %>" class="code_button">Code</a>
+        <a href="/home?category=Visual&user=<%= userName %>" class="visual_button">Visual</a>
+        <a href="/home?category=Audio&user=<%= userName %>" class="audio_button">Audio</a>
+    </header>
+    <a href="/share?user=<%= userName %>" class="share_button">Share +</a>
+
+    <h2 class="header">
+        <%= Filter %>
+    </h2>
+    <div class="asset_grid">
+        <% if (assets && assets.length> 0) { %>
+            <% assets.forEach(asset=> { %>
+                <div class="card <%= asset.category %>_card">
+                    <span class="label">
+                        <%= asset.category %>
+                    </span>
+                    <h3>
+                        <%= asset.title %>
+                    </h3>
+                    <div class="media">
+                        <% if (asset.category==="Visual" ){ %>
+                            <img src="<%= asset.link %> " alt="Visual Asset" onerror="this.style.display='none'">
+                                <% } %>
+                    </div>
+                    <p>
+                        <%= asset.description %>
+                    </p>
+                    <button class="view"> <a  href="<%= asset.link %>" target="_blank">View Asset</a></button>
+                    <p class="creator_name">By: <%=asset.creatorName%>
+                    </p>
+                </div>
+                <% }) %>
+                    <% } else { %>
+                        <p>No assets shared here yet!</p>
+                        <% } %>
+    </div>
+
+    <script>
+    const logo = document.querySelector('.logo');
+    const meow = new Audio('/audio/bleehhh!.mp3'); // cat goes blehhh!
+
+    logo.addEventListener('click', function (e) {
+        e.preventDefault();
+        const url = this.href;
+
+        meow.currentTime = 0;
+        meow.play();
+        meow.addEventListener('ended', function () {
+            window.location.href = url;
+        }, { once: true });
+    });
+</script>
+</body>
+
+</html>
