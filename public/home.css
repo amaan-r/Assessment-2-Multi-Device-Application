@@ -111,11 +111,14 @@
     }
 
     .view {
-        width: 25%;
+        width: 30%;
         background-color: #000000;
         border: none;
         border-radius: 50px;
         padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        margin: auto 0;
     }
 
     .view a {
@@ -420,4 +423,5 @@
     .creator_name {
         font-size: clamp(1rem,3vw,1.3rem);
     }
+
 }
