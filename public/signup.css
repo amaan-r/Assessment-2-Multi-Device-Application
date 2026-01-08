@@ -59,7 +59,7 @@
         justify-self: center;
         align-self: flex-end;
         margin-bottom: 0;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .form_pwd {
@@ -67,7 +67,7 @@
         justify-self: center;
         align-self: baseline;
         margin-top: 1rem;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .signup_button {
@@ -238,3 +238,4 @@
 
 
 }
+
