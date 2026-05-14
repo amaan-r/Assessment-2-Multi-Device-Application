@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const uri = "mongodb+srv://amaanjamil6_db_user:hkdaNgUwshBWxyl1@cluster0.celpxdd.mongodb.net/?appName=Cluster0";
+const uri = "";
 mongoose.connect(uri)
 
 .then(() => console.log('databse connected'))
