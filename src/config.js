@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
-const uri = "mongodb://localhost:27017/musicPortal";
+const uri = "mongodb://localhost:27017/Login_Data";
 mongoose.connect(uri)
 
 .then(() => console.log('databse connected'))
-.catch (() => console.log('database is not connected'))
+.catch((err) => console.log('database is not connected:', err))
 
 module.exports = mongoose;
-
