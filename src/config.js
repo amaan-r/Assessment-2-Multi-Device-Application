@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const uri = "mongodb://localhost:27017/Login_Data";
+const uri = "mongodb+srv://amaanjamil6_db_user:hkdaNgUwshBWxyl1@cluster0.celpxdd.mongodb.net/?appName=Cluster0";
 mongoose.connect(uri)
 
 .then(() => console.log('databse connected'))
